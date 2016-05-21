@@ -1,0 +1,27 @@
+{
+  "name": "ionic-game-api",
+  "version": "1.0.0",
+  "description": "API for communication with ionic-game",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ionic",
+    "node",
+    "express",
+    "game"
+  ],
+  "author": "Anders Ekman",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.3.0",
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "jsonwebtoken": "^6.2.0",
+    "mongoose": "^4.4.16",
+    "mongoose-simple-random": "^0.3.3",
+    "morgan": "^1.7.0",
+    "node-uuid": "^1.4.7"
+  }
+}

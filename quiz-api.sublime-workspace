@@ -1,0 +1,727 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"found",
+				"foundUser"
+			],
+			[
+				"qu",
+				"questions"
+			],
+			[
+				"que",
+				"question"
+			],
+			[
+				"$http",
+				"$http	AngularJS"
+			],
+			[
+				"flex",
+				"flex-wrap"
+			],
+			[
+				"fle",
+				"flex-start"
+			],
+			[
+				"ng-mou",
+				"ng-mouseleave	AngularJS"
+			],
+			[
+				"succ",
+				"successfully"
+			],
+			[
+				"opt",
+				"option	Tag"
+			],
+			[
+				"ta",
+				"table-column"
+			],
+			[
+				"back",
+				"background"
+			],
+			[
+				"upda",
+				"updateEntry"
+			],
+			[
+				"text",
+				"textarea	Tag"
+			],
+			[
+				"get",
+				"rget	router.get"
+			],
+			[
+				"req",
+				"req"
+			],
+			[
+				"s",
+				"rs	res.send"
+			],
+			[
+				"a",
+				"transparent"
+			],
+			[
+				"prev",
+				"prevOrNext"
+			],
+			[
+				"ng-",
+				"ng-keydown	AngularJS"
+			],
+			[
+				"rg",
+				"rgba()"
+			],
+			[
+				"ng-r",
+				"ng-repeat	AngularJS"
+			],
+			[
+				"con",
+				"controller	AngularJS"
+			],
+			[
+				"cl",
+				"ng-click	AngularJS"
+			],
+			[
+				"t",
+				"pointer"
+			],
+			[
+				"booked_",
+				"booked_to"
+			],
+			[
+				"in",
+				"inspectionDate"
+			],
+			[
+				"insp",
+				"inspectionDate"
+			],
+			[
+				"update",
+				"updateCar"
+			],
+			[
+				"ins",
+				"inspectionDate"
+			],
+			[
+				"bes",
+				"besikt_bilar"
+			],
+			[
+				"car",
+				"carNeeds"
+			],
+			[
+				"valjBat",
+				"valjBastBil_next_step"
+			],
+			[
+				"valjB",
+				"valjBastBil_next_step"
+			],
+			[
+				"requ",
+				"requestId"
+			],
+			[
+				"valj",
+				"valjBastBil_next_step"
+			],
+			[
+				"val",
+				"valjBastBil_next_step"
+			],
+			[
+				"ret",
+				"returnArr"
+			],
+			[
+				"bok",
+				"bokningar"
+			],
+			[
+				"regn",
+				"regnummer"
+			],
+			[
+				"tillva",
+				"tillvalFix"
+			],
+			[
+				"till",
+				"tillDatum"
+			],
+			[
+				"newf",
+				"newFunkArr"
+			],
+			[
+				"funka",
+				"funkAddedMsg"
+			],
+			[
+				"funk",
+				"funktioner"
+			],
+			[
+				"ser",
+				"serviceDate"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"paddo",
+				"padding-top"
+			],
+			[
+				"inlin",
+				"inline-block"
+			],
+			[
+				"film",
+				"film"
+			],
+			[
+				"re",
+				"result"
+			],
+			[
+				"movi",
+				"movieLength"
+			],
+			[
+				"file",
+				"filePath"
+			],
+			[
+				"json",
+				"json"
+			],
+			[
+				"inl",
+				"inline-block"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app.js",
+			"settings":
+			{
+				"buffer_size": 7098,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "README.md",
+			"settings":
+			{
+				"buffer_size": 89,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "Package Control: ",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"install p",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 472.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/_IONIC_/ionic-game-api"
+	],
+	"file_history":
+	[
+		"/C/_IONIC_/ionic-game/www/lib/ionic/scss/_button.scss",
+		"/C/_IONIC_/ionic-game/www/lib/ionic/scss/_variables.scss",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/ionic-game-api/models/users.js",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/ionic-game-api/app.js",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/angular-profile/src/models/user.js",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/angular-profile/app.js",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/ionic-game-api/db.js",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/angular-profile/src/api/index.js",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/ionic-game/config.xml",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/ionic-game/platforms/android/AndroidManifest.xml",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/ionic-game/www/templates/main.html",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/ionic-game/www/templates/profile.html",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/ionic-game/platforms/android/res/xml/config.xml",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/ionic-game/plugins/cordova-plugin-whitelist/package.json",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/ionic-game/plugins/cordova-plugin-whitelist/README.md",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/ionic-game/plugins/cordova-plugin-whitelist/plugin.xml",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/ionic-game/platforms/android/build.gradle",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/angular-profile/public/js/app.js",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/angular-profile/public/js/index.controller.js",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/ionic-game/www/css/style.css",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/ionic-game/www/js/functions.js",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/ionic-game/www/templates/question.html",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/ionic-game/www/index.html",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/ionic-game/www/js/routes.js",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/ionic-game/www/js/app.js",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/ionic-game-api/models/questions.js",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/ionic-game-api/api/api.js",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/ionic-game-api/api/models/crud.js",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/ionic-game-api/package.json",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/ionic-game-api/README.md",
+		"/C/Users/oakis/AppData/Local/Temp/scp57212/www/dpy/index.php",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/test/angular-profile/README.md",
+		"/C/Users/oakis/dump/projekt_webbramverk/users.metadata.json",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/test/angular-profile/package.json",
+		"/C/Users/oakis/dump/cribatec/users.bson",
+		"/C/Users/oakis/dump/cribatec/users.metadata.json",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/test/angular-profile/src/api/index.js",
+		"/C/Users/oakis/Desktop/SHIT FROM DA DESKTOP/Cribatec/_Cribatec_Nodejs_/cribatec/api/index.js",
+		"/C/Users/oakis/Desktop/SHIT FROM DA DESKTOP/Cribatec/_Cribatec_Nodejs_/cribatec/api/models/users.js",
+		"/C/Users/oakis/Desktop/SHIT FROM DA DESKTOP/Cribatec/_Cribatec_Nodejs_/cribatec/public/index.html",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/test/angular-profile/app.js",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/angular-profile/package.json",
+		"/C/Users/oakis/Desktop/SHIT FROM DA DESKTOP/Cribatec/_Cribatec_Nodejs_/cribatec/public/js/app.js",
+		"/C/Users/oakis/Desktop/SHIT FROM DA DESKTOP/Cribatec/_Cribatec_Nodejs_/cribatec/public/js/controllers/login.js",
+		"/C/Users/oakis/Desktop/SHIT FROM DA DESKTOP/Cribatec/_Cribatec_Nodejs_/cribatec/app.js",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/angular-profile/public/js/profile.controller.js",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/angular-profile/public/js/directives.js",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/angular-profile/public/login.html",
+		"/C/Users/oakis/Desktop/SHIT FROM DA DESKTOP/Cribatec/_Cribatec_Nodejs_/cribatec/.gitignore",
+		"/C/Users/oakis/Desktop/SHIT FROM DA DESKTOP/Cribatec/_Cribatec_Nodejs_/cribatec/public/kontakt.html",
+		"/C/Users/oakis/Desktop/SHIT FROM DA DESKTOP/Cribatec/_Cribatec_Nodejs_/cribatec/config/db.js",
+		"/C/Users/oakis/Desktop/SHIT FROM DA DESKTOP/Cribatec/_Cribatec_Nodejs_/cribatec/config/auth.js",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/angular-profile/config.js",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/api/index.html",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/angular-horizontal-timeline/demo.html",
+		"/C/Users/oakis/Desktop/New folder/CRUD_project/src/api/index.js",
+		"/C/Users/oakis/Desktop/New folder/mini-mean/public/index.html",
+		"/C/Users/oakis/Desktop/New folder/mini-mean/public/css/app.css",
+		"/C/Users/oakis/Desktop/New folder/CRUD_project/src/app.js",
+		"/C/Users/oakis/Desktop/New folder/CRUD_project/src/database.js",
+		"/C/Users/oakis/Desktop/New folder/CRUD_project/package.json",
+		"/C/Users/oakis/Desktop/New folder/mini-mean/package.json",
+		"/C/Users/oakis/Desktop/New folder/mini-mean/src/generate/test.js",
+		"/C/Users/oakis/Desktop/New folder/mini-mean/gulpfile.js",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/angular-profile/public/index.html",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/angular-profile/public/js/vendor/angular/angular.js",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/angular-horizontal-timeline/package.json",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/angular-horizontal-timeline/Gruntfile.js",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/angular-horizontal-timeline/bower.json",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/angular-horizontal-timeline/angular-horizontal-timeline.js",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/angular-profile/public/js/angular-horizontal-timeline.js",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/angular-profile/public/css/style.css",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/angular-profile/public/admin.users.html",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/angular-profile/public/profile.html",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/angular-profile/public/js/admin.controller.js",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/angular-profile/public/admin.posts.html",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/angular-profile/public/register.html",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/angular-profile/public/logout.html",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/angular-profile/public/admin.html",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/angular-profile/public/js/ng-file-upload.min.js",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/angular-profile/public/templates/menu.html",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/angular-profile/public/js/jquery.js",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/angular-profile/public/menu.html",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/angular-profile/public/start.html",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/angular-profile/public/admin/users.html",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/angular-profile/public/admin/posts.html",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/angular-profile/node_modules/ngstorage/package.json",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/learning-mean/src/api/index.js",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/learning-mean/src/app.js",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/angular-profile/src/models/class.js",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/learning-mean/public/admin.html",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/learning-mean/app/app.js",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/angular-profile/src/app.js",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/angular-profile/src/api/controllers/authentication.js",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/angular-profile/src/api/routes/index.js",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/angular-profile/src/api/controllers/profile.js",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/angular-profile/src/api/config/passport.js",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/angular-profile/src/models/users.js",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/angular-profile/src/models/profile.js",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/angular-profile/src/db.js",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/learning-mean/public/styles/style.css",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/learning-mean/public/index.html",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/learning-mean/src/models/crud.js",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/learning-mean/src/db.js",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/learning-mean/package.json",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/learning-mean/README.md",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/learning-mean/public/edititem.html",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/learning-mean/public/templates/edititem.html",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/uppgifter_angular/grund2/uppgift8/Biltabelluppgiften/js/directive.js",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/uppgifter_angular/grund2/uppgift2/app.js",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/uppgifter_angular/grund2/uppgift2/index.html",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/projekt/film/package.json",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/uppgifter_angular/grund2/uppgift8/Biltabelluppgiften/index.html",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/uppgifter_angular/grund2/uppgift8/Biltabelluppgiften/template/list-item.html",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/uppgifter_angular/grund2/uppgift8/Biltabelluppgiften/css/style.css",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/uppgifter_angular/grund2/uppgift8/Biltabelluppgiften/js/controller.js",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/uppgifter_angular/grund2/uppgift9/index.html",
+		"/C/Users/oakis/Desktop/DPY 3.0/css/style.css",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/uppgifter_angular/grund2/uppgift8/Biltabelluppgiften/README.md",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/uppgifter_angular/gulpfile.js",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/uppgifter_angular/grund2/uppgift8/Biltabelluppgiften/list-item.html",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/uppgifter_angular/grund2/uppgift8/Biltabelluppgiften/directive.js",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/uppgifter_angular/grund2/uppgift8/Biltabelluppgiften/controller.js",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/uppgifter_angular/grund2/uppgift8/Biltabelluppgiften/app.js",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/uppgifter_angular/grund2/uppgift7/index.html",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/uppgifter_angular/grund2/uppgift7/controller.js",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/uppgifter_angular/grund2/uppgift7/app.js",
+		"/C/Users/oakis/Desktop/Apputvecklare.js/Uppgifter/nydpy/uppgifter_angular/grund2/uppgift6/app.js"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"C:\\Users\\oakis\\Desktop\\SHIT FROM DA DESKTOP\\Cribatec\\_Cribatec_Nodejs_\\cribatec\\api",
+			"C:\\Users\\oakis\\Desktop\\SHIT FROM DA DESKTOP\\Cribatec\\_Cribatec_Nodejs_\\cribatec",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"facebook",
+			"reg",
+			"stable",
+			"small",
+			"has-header",
+			"plugin name",
+			"android.permission",
+			"localhost:3000",
+			"jcenter",
+			".center",
+			"center",
+			"moment",
+			"$cookies",
+			"users",
+			"-->",
+			"<!--",
+			"]",
+			"[",
+			"inne",
+			"inner",
+			"ngrepeat",
+			"ng-repeat",
+			"node",
+			"vendor",
+			"ngFileUpload",
+			"angular-horizontal-timeline",
+			"skill",
+			"row",
+			"&&",
+			"split",
+			"button",
+			"background",
+			"saveUser",
+			"when",
+			"skill",
+			"flex",
+			"a h",
+			"flex",
+			"filter",
+			"users",
+			"surename",
+			"..",
+			"userLogin",
+			"register",
+			"console.log",
+			"table",
+			"$cookies",
+			"$timeout",
+			"admin",
+			"role",
+			"token",
+			"create",
+			"name",
+			"secret",
+			"mongoose",
+			"$scope.posts",
+			"tag",
+			"author",
+			"console.log",
+			"ng-mopost",
+			"add.",
+			"del",
+			"edit.",
+			"errorCallback",
+			"successCallback",
+			"name",
+			"width",
+			"44px",
+			"h1",
+			"browser",
+			"vehicle",
+			"vehicle_r",
+			"span(class='req_star') *",
+			"vehicle",
+			"span(class='req_star') *",
+			"button",
+			"background: #ccc;",
+			"vehi",
+			"border",
+			"search",
+			"besiktning",
+			"search_text",
+			".get",
+			"inspection",
+			"bokningar",
+			"needs",
+			"db",
+			"privat",
+			"tillvalfix",
+			"var send",
+			"f.stringify",
+			"stringify",
+			"sortArr",
+			"format",
+			"console.log(funkArr);",
+			"18",
+			"add",
+			"newArr",
+			"form",
+			"top",
+			"snatch",
+			">",
+			"router",
+			"4",
+			"indent",
+			"listen",
+			"stack",
+			"response.end",
+			"send"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"37.139.10.122",
+			">",
+			"<",
+			"ng-model",
+			"post.",
+			"post",
+			"post.",
+			"",
+			"ng-model",
+			"$h",
+			"h2",
+			"span(class='required') *",
+			"span(class='request') *",
+			"span(class='req_star') *"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7098,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								568,
+								568
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": -0.0,
+						"translation.y": 162.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "README.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 89,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								89,
+								89
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 36.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 130.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "quiz-api.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 174.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
