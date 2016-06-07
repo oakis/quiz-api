@@ -1,8 +1,14 @@
 'use strict';
 
 var express = require('express');
+var app = express();
+
+
+// Models
 var question = require('./models/questions');
 var user = require('./models/users');
+var game = require('./models/games');
+
 var mongoose = require('mongoose');
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
@@ -11,10 +17,11 @@ var cors = require('cors');
 
 var config = require('./config');
 
-var app = express();
-
 // Load database
-mongoose.connect(config.database);
+mongoose.connect(config.database, function(err) {
+    if (err) throw err;
+    console.log('MongoDB successfully connected.')
+});
 
 // Logger
 app.use(morgan('dev'));
@@ -25,6 +32,18 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // CORS
 app.use(cors());
+
+// Function
+
+function shuffleArray(array) {
+  for (var i = array.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+  return array;
+}
 
 // Api routes
 
@@ -42,10 +61,9 @@ app.get('/', function (req, res, next) {
 //############
 
 app.post('/login', function(req, res) {
-
   // find the user
   user.findOne({
-    username: req.body.username
+    'username': new RegExp(["^", req.body.username, "$"].join(""), "i")
   }, function(err, foundUser) {
 
     if (err) throw err;
@@ -63,7 +81,7 @@ app.post('/login', function(req, res) {
 	        // if user is found and password is right
 	        // create a token
 	        var token = jwt.sign(foundUser, config.secret, {
-	          expiresIn: 999999 // expires in 24 hours
+	          expiresIn: '30d' // 30 days
 	        });
 
 	        // return the information including token as JSON
@@ -71,7 +89,8 @@ app.post('/login', function(req, res) {
 	        res.json({
 	          success: true,
 	          username: foundUser.username,
-	          token: token
+	          token: token,
+	          role: foundUser.role
 	        });
       	} else {
       		console.log('wrong password')
@@ -87,9 +106,8 @@ app.post('/register', function(req,res){
   // check if all fields are filled in
   if (req.body.username!=undefined || req.body.password!=undefined || req.body.email!=undefined) {
   	// check db for username
-    user.findOne({ $or: [ { username: req.body.username },{ email: req.body.email } ] }, function(err, foundUser) {
-      if (err) throw err;
-      console.log(foundUser);
+    user.findOne({ $or: [ { username: { $regex: req.body.username, $options: 'i' } },{ email: { $regex: req.body.email, $options: 'i' } } ] }, function(err, foundUser) {
+      if (err) console.log(err);
       if (!foundUser) { // if user doesn't exist, register
       	user.create(req.body ,function(err){
       		if (err) {
@@ -99,8 +117,15 @@ app.post('/register', function(req,res){
       			res.json({ success: true, message: 'Successfully created new user '+req.body.username+'.', user: req.body.username, exists: false });
       		}
       	})
-      } else if (foundUser) { // if user already exists, abort
-      	res.json({ success: false, message: 'Username or E-mail is already registered.', exists: true, user: req.body.username });
+      } else if (new RegExp('^'+foundUser.email+'$', "i").test(req.body.email)) { // if email already exists, abort
+      	console.log('2')
+      	res.json({ success: false, message: 'E-mail is already registered.', exists: true, error: 'email', email: req.body.email });
+      } else if (new RegExp('^'+foundUser.username+'$', "i").test(req.body.username)) { // if user already exists, abort
+      	console.log('3')
+      	res.json({ success: false, message: 'Username is already registered.', exists: true, error: 'username', user: req.body.username });
+      } else {
+      	console.log('4')
+      	res.json({ success: false });
       }
     });
   } else {
@@ -123,7 +148,7 @@ app.use(function(req, res, next) {
     // verifies secret and checks exp
     jwt.verify(token, config.secret, function(err, decoded) {      
       if (err) {
-        return res.json({ success: false, message: 'Failed to authenticate token.' });    
+        return res.status(403).json({ success: false, message: 'Failed to authenticate token.' });    
       } else {
         // if everything is good, save to request for use in other routes
         req.decoded = decoded;
@@ -135,7 +160,7 @@ app.use(function(req, res, next) {
 
     // if there is no token
     // return an error
-    return res.status(403).send({ 
+    return res.status(403).json({ 
         success: false, 
         message: 'No token provided.' 
     });
@@ -147,24 +172,31 @@ app.use(function(req, res, next) {
 //### USER ###
 //############
 
-// All users
-app.get('/users', function (req, res, next) {
-	user.find({}, /*'username totalPoints',*/ function(err, users){
-		if(err) {
-			res.status(500).json({ message: 'Could not fetch users from database.' });
+// Current user
+app.get('/user/:username', function (req, res, next) {
+	user.findOne({ username: req.params.username }, 'username totalPoints', function(err, currentUser){
+		console.log(currentUser)
+		if (err) throw err;
+
+		if (!currentUser) {
+			console.log('no user found')
+			res.status(403).json({ message: 'Could not fetch user '+req.params.username+' from database.' });
 		} else {
-			res.status(200).json({ message: 'Users loaded.', users: users });
+			console.log('user found')
+			res.status(200).json({ message: 'User loaded.', user: currentUser });
 		}
 	});
 });
 
-// Current user
-app.get('/user/:username', function (req, res, next) {
-	user.findOne({ username: req.params.username }, 'username totalPoints', function(err, currentUser){
+// Update role
+app.put('/role/:username', function (req, res, next) {
+	console.log(req.body);
+	console.log(req.params.username);
+	user.findOneAndUpdate({ username: req.params.username }, { $set: { role: req.body.role } }, function(err, userRole){
 		if(err) {
-			res.status(500).json({ message: 'Could not fetch user '+req.params.username+' from database.' });
+			res.status(500).json({ message: 'Something went wrong.' });
 		} else {
-			res.status(200).json({ message: 'User loaded.', user: currentUser });
+			res.status(200).json({ message: 'User role updated.' });
 		}
 	});
 });
@@ -173,9 +205,9 @@ app.get('/user/:username', function (req, res, next) {
 //### QUESTIONS ###
 //#################
 
-app.get('/question', function (req, res, next) {
+app.get('/question/:accepted', function (req, res, next) {
 
-  question.findRandom({}, {}, {limit: 3}, function(err, result) {
+  question.findRandom({ accepted: req.params.accepted }, {}, {limit: 5}, function(err, result) {
 			if(err) {
 				res.status(500).json({ message: 'Could not fetch question from database.' });
 			} else {
@@ -185,14 +217,38 @@ app.get('/question', function (req, res, next) {
 
 });
 
+app.get('/questionstats', function (req, res, next) {
+
+  question.aggregate([
+  	{ $match: { accepted: true } },
+  	{ $group : { _id : "$author", sum: { $sum: 1 } } }
+  	], function(err, result) {
+			if(err) {
+				res.status(500).json({ message: 'Could not fetch questions from database.' });
+			} else {
+				res.status(200).json({ message: 'Question loaded.', question: result });
+			}
+  });
+
+});
+
 app.post('/question', function (req, res, next) {
+	function roleCheck (role) {
+		if (role == 'admin' || role == 'trusted') {
+			return true;
+		} else if (role == 'user') {
+			return false;
+		}
+		return false;
+	}
 	question.create({ 
 		author: req.body.author,
 		date: Date.now(),
 		question: req.body.question,
 		choices: req.body.choices.split(','),
 		answer: req.body.answer,
-		category: req.body.category
+		category: req.body.category,
+		accepted: roleCheck(req.body.role)
 	 }, function (err, question) {
 	  if (err) {
 	  	res.status(500).json({ message: 'Could not create question.' });
@@ -213,15 +269,14 @@ app.delete('/question/:id', function (req, res) {
 });
 
 app.put('/question/:id', function (req, res) {
+	console.log('Params id:',req.params.id);
+	console.log('Body:',req.body);
 	question.update({ _id: req.params.id },
 		{$set:{ 
-			author: req.body.author,
 			dateUpdated: Date.now(),
 			question: req.body.question,
 			choices: req.body.choices.split(','),
-			answer: req.body.answer,
-			category: req.body.category,
-			accepted: req.body.accepted
+			answer: req.body.answer
 		 }}, function (err, question) {
 	  if (err) {
 	  	res.status(500).json({ message: 'Could not update question.' });
@@ -230,6 +285,91 @@ app.put('/question/:id', function (req, res) {
 	  };
 	});
 });
+
+app.put('/accept', function (req, res) {
+	question.update({ _id: req.body.id },
+		{$set:{ 
+			accepted: true
+		 }}, function (err, question) {
+	  if (err) {
+	  	res.status(500).json({ message: 'Could not update question.' });
+	  } else {
+	  	res.status(200).json({ message: 'Question '+req.body.id+' was successfully accepted.' });
+	  };
+	});
+});
+
+//#############
+//### STATS ###
+//#############
+
+// All users
+app.get('/users', function (req, res, next) {
+	user.find({}, 'username role totalPoints', function(err, users){
+		if(err) {
+			res.status(500).json({ message: 'Could not fetch users from database.' });
+		} else {
+			res.status(200).json({ message: 'Users loaded.', users: users });
+		}
+	});
+});
+
+app.get('/stats', function (req, res, next) {
+	var statsData = [];
+	var obj = {};
+	user.aggregate([ { $group: { _id: null, sum: { $sum: "$totalPoints" } } } ], function(err, points){
+		if(err) {
+			res.status(500).json({ message: 'Could not fetch stats from database.' });
+		} else {
+			var obj = {
+				'name': 'Total poäng',
+				'sum': points[0].sum
+			};
+			statsData.push(obj);
+		}
+	});
+	user.find({}, 'username', function(err, users){
+		var obj = {};
+		if(err) {
+			res.status(500).json({ message: 'Could not fetch stats from database.' });
+		} else {
+			var obj = {
+				'name': 'Antal användare',
+				'sum': users.length
+			};
+			statsData.push(obj);
+			question.aggregate([ { $match: { accepted: true } } ], function(err, accepted){
+				var obj = {};
+				if(err) {
+					res.status(500).json({ message: 'Could not fetch stats from database.' });
+				} else {
+					var obj = {
+						'name': 'Antal godkända frågor',
+						'sum': accepted.length
+					};
+					statsData.push(obj);
+					question.aggregate([ { $match: { accepted: false } } ], function(err, accepted){
+						var obj = {};
+						if(err) {
+							res.status(500).json({ message: 'Could not fetch stats from database.' });
+						} else {
+							var obj = {
+								'name': 'Antal icke godkända frågor',
+								'sum': accepted.length
+							};
+							statsData.push(obj);
+							res.status(200).json(statsData);
+						}
+					});
+				}
+			});
+		}
+	});
+	
+	
+});
+
+
 
 //############
 //### GAME ###
@@ -257,6 +397,158 @@ app.post('/userscore', function (req, res) {
 	})
 
 });
+
+app.post('/game/queue', function(req,res,next) {
+	game.findOneAndUpdate({ $and: [ { player2: null },{ player1: { $ne: req.body.username } } ] }, { $set: { player2: req.body.username, gameActive: true } }, function (err, data) {
+		if (err) throw err;
+		if (!data) {
+			console.log('1')
+			// get questions for game
+			question.findRandom({ accepted: true }, {}, {limit: 10}, function(err, questions) {
+				if(err) throw err;
+				var questionsArr = [];
+				for (var q of questions) {
+		      questionsArr.push({
+		        _id: q._id,
+		        question: q.question,
+		        choices: shuffleArray(q.choices),
+		        answer: q.answer
+		      });
+		    }
+		    shuffleArray(questionsArr);
+				// then create game
+				game.create({ player1: req.body.username, questions: questionsArr }, function (err, data) {
+					if (err) throw err;
+					console.log('2')
+					res.json({ success: true, message: 'User '+req.body.username+' created a new game.' });
+				});
+		  });
+		} else if (data.player1 != req.body.username) {
+			console.log('3')
+			res.json({ success: true, message: 'User '+req.body.username+' joined '+data.player1+' game.' });
+		} else {
+			console.log('4')
+			res.json({ success: false, message: 'User '+req.body.username+' is already queued for a game.' });
+		}
+	})
+})
+
+app.post('/game/lfm', function (req,res,next) {
+	game.findOne({ $and: [ { $or: [ { player1: req.body.username },{ player2: req.body.username } ] }, { gameActive: true }, { player2: { $ne: null } } ] }, function (err, data) {
+		if (err) throw err;
+		if (data) {
+			console.log('success')
+			res.json({ success: true, data: data })
+		} else {
+			res.json({ success: false })
+		}
+	})
+})
+
+// Get active or finnished games
+app.post('/game/matches/:active/:finnished', function (req,res,next) {
+	game.find({ $and: [ { $or: [ { player1: req.body.username },{ player2: req.body.username } ] }, { gameActive: req.params.active }, { gameOver: req.params.finnished } ] }, function (err, data) {
+		if (err) throw err;
+		res.json(data);
+	})
+})
+
+// Get match by ID
+app.get('/game/getmatch/:id', function (req,res,next) {
+	game.find({ _id: req.params.id }, function (err, data) {
+		if (err) throw err;
+		res.json(data);
+	})
+})
+
+// Get all matches and check win/loss
+app.get('/game/getmatches', function (req,res,next) {
+	game.aggregate([
+    { 
+        $project: { 
+            scores: [
+                { name: '$winner', wins: { $literal: 1 }, losses: { $literal: 0 }, tied: { $literal: 0 } }, 
+                { name: '$loser', wins: { $literal: 0 }, losses: { $literal: 1 }, tied: { $literal: 0 } },
+        { name: '$player1', wins: { $literal: 0 }, losses: { $literal: 0 }, tied: { $cond: [ "$tied", 1, 0 ] } },
+        { name: '$player2', wins: { $literal: 0 }, losses: { $literal: 0 }, tied: { $cond: [ "$tied", 1, 0 ] } }
+            ] 
+        } 
+    }, 
+    { 
+        $unwind: '$scores' 
+    }, 
+    { 
+        $group: {
+             _id: "$scores.name", 
+            wins: { $sum: "$scores.wins" }, 
+            losses: { $sum: "$scores.losses" },
+    tied: { $sum: "$scores.tied" }
+        } 
+    }
+], function (err, data) {
+		if (err) throw err;
+		var listToDelete = [null, 'tie'];
+		var newData = data.filter(function(obj) {
+		    return listToDelete.indexOf(obj._id) === -1;
+		});
+		for (var user of newData) {
+      user.ratio = user.wins / (user.losses + user.wins + user.tied) * 100;   
+    }
+		console.log(newData);
+		res.json(newData);
+	})
+})
+
+app.post('/game/savescore/', function (req,res,next) {
+
+	var isOver = false;
+	var theWinner;
+	var theLoser;
+	var isItTied = false;
+
+	game.find({ _id: req.body.gameId }, function (err, data) {
+		if (err) throw err;
+
+		var data = data[0];
+
+		if (data.player1 == req.body.username) {
+			if (data.player2Played) {
+				isOver = true;
+				if (data.player2Played && req.body.score > data.score2) {
+					theWinner = data.player1;
+					theLoser = data.player2;
+				} else if (data.player2Played && req.body.score < data.score2) {
+					theWinner = data.player2;
+					theLoser = data.player1;
+				} else {
+					theWinner = 'tie';
+					isItTied = true;
+				}
+			}
+			console.log('theWinner:',theWinner);
+			game.findOneAndUpdate({ _id: req.body.gameId },{ $set: { score1: req.body.score, player1Played: true, gameOver: isOver, gameActive: !isOver, winner: theWinner, loser: theLoser, tied: isItTied } }, function (err,newdata) {
+			})
+		} else if (data.player2 == req.body.username) {
+			if (data.player1Played) {
+				isOver = true;
+				if (data.player1Played && data.score1 > req.body.score) {
+					theWinner = data.player1;
+					theLoser = data.player2;
+				} else if (data.player1Played && data.score1 < req.body.score) {
+					theWinner = data.player2;
+					theLoser = data.player1;
+				} else {
+					theWinner = 'tie';
+					isItTied = true;
+				}
+			}
+			console.log('theWinner:',theWinner);
+			game.findOneAndUpdate({ _id: req.body.gameId },{ $set: { score2: req.body.score, player2Played: true, gameOver: isOver, gameActive: !isOver, winner: theWinner, loser: theLoser, tied: isItTied } }, function (err,newdata) {
+			})
+		}
+	})
+	res.json({ message: 'success, score added lol' })
+})
 
 // Start server
 app.listen(80, function() {

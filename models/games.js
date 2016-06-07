@@ -9,19 +9,48 @@ var gameSchema = new mongoose.Schema({
   }, 
   player2: {
   	type: String,
-    required: true
+    default: null
   },
   score1: {
     type: Number,
-    required: true
+    default: 0
   }, 
   score2: {
     type: Number,
-    required: true
+    default: 0
+  },
+  gameActive: {
+    type: Boolean,
+    default: false
+  },
+  gameOver: {
+    type: Boolean,
+    default: false
   },
   dateOfMatch: {
     type: Date,
     default: Date.now()
+  },
+  questions: {
+    type: Array,
+    required: true
+  },
+  player1Played: {
+    type: Boolean,
+    default: false
+  },
+  player2Played: {
+    type: Boolean,
+    default: false
+  },
+  winner: {
+    type: String
+  },
+  loser: {
+    type: String
+  },
+  tied: {
+    type: Boolean
   }
 
 });
