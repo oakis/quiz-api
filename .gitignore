@@ -33,4 +33,9 @@ node_modules
 .node_repl_history
 
 # Sublime Project
-*.sublime*
+*.sublime-project
+*.sublime-workspace
+
+private.key
+certificate.pem
+cert.scr
