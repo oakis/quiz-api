@@ -469,8 +469,8 @@ app.get('/game/getmatches', function (req,res,next) {
             scores: [
                 { name: '$winner', wins: { $literal: 1 }, losses: { $literal: 0 }, tied: { $literal: 0 } }, 
                 { name: '$loser', wins: { $literal: 0 }, losses: { $literal: 1 }, tied: { $literal: 0 } },
-        { name: '$player1', wins: { $literal: 0 }, losses: { $literal: 0 }, tied: { $cond: [ "$tied", 1, 0 ] } },
-        { name: '$player2', wins: { $literal: 0 }, losses: { $literal: 0 }, tied: { $cond: [ "$tied", 1, 0 ] } }
+     					  { name: '$player1', wins: { $literal: 0 }, losses: { $literal: 0 }, tied: { $cond: [ "$tied", 1, 0 ] } },
+        				{ name: '$player2', wins: { $literal: 0 }, losses: { $literal: 0 }, tied: { $cond: [ "$tied", 1, 0 ] } }
             ] 
         } 
     }, 
